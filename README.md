@@ -13,7 +13,7 @@ stunturncheck({url: 'stun:stun.l.google.com:19302'}, function(err, res) {
     }
     if (res > 0) {
         // a stun server could be reached and the local description
-        // contains srflx candidates.
+        // contains srflx (for stun) or relay (for turn) candidates.
     } else {
         // stun server could not be reached, port may be blocked.
     }
