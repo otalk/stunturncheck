@@ -17,7 +17,7 @@ stunturncheck({url: 'stun:stun.l.google.com:19302'}, function(err, res) {
     } else {
         // stun server could not be reached, port may be blocked.
     }
-
+});
 ```
 The first argument to stunturncheck follows the same convention as the 
 
