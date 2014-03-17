@@ -22,7 +22,9 @@ stunturncheck({url: 'stun:stun.l.google.com:19302'}, function(err, res) {
 The first argument to stunturncheck follows the same convention as the 
 
 To test a TURN/TCP server you would pass something along the lines of
+```js
 {url: 'turn:some.host:3478?transport=tcp', username: 'user', credential: 'secret'}
+```
 as first argument.
 
 ## License
