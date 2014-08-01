@@ -1,6 +1,6 @@
 {
   "name": "stunturncheck",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check WebRTC STUN and TURN connectivity",
   "main": "index.js",
   "repository": {
