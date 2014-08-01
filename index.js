@@ -6,7 +6,6 @@ module.exports = function (config, cb) {
     var hasstun = 0;
     var hasturn = 0;
     pc.onicecandidate = function (event) {
-        console.log(event.candidate);
         if (!event.candidate) {
             var desc = SJJ.toSessionJSON(pc.localDescription.sdp);
             desc.contents[0].transport.candidates.forEach(function (candidate) {
