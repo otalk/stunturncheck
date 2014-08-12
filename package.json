@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "sdp-jingle-json": "1.x",
-    "webrtcsupport": "0.7.x"
+    "webrtcsupport": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "2.x",
