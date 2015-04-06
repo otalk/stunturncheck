@@ -11,20 +11,12 @@ module.exports = function (config, cb) {
             desc.contents[0].transport.candidates.forEach(function (candidate) {
                 if (candidate.type == 'srflx' && config.url.indexOf('stun:') === 0) {
                     hasstun++;
-                } else if (candidate.type == 'relay' && (config.url.indexOf('turn:') === 0|| config.url.indexOf('turns:') === 0)) {
+                } else if (candidate.type == 'relay' && (config.url.indexOf('turn:') === 0 || config.url.indexOf('turns:') === 0)) {
                     hasturn++;
                 }
             });
             pc.close();
-            cb(null, hasstun + hasturn);
-        } else if (webrtc.prefix == 'moz') {
-            // firefox doesnt update the localdescription
-            var cand = SJJ.toCandidateJSON(event.candidate.candidate);
-            if (candidate.type == 'srflx' && config.url.indexOf('stun:') === 0) {
-                hasstun++;
-            } else if (candidate.type == 'relay' && (config.url.indexOf('turn:') === 0|| config.url.indexOf('turns:') === 0)) {
-                hasturn++;
-            }
+            console.log(hasstun, hasturn);
         }
     };
     window.setTimeout(
@@ -37,10 +29,9 @@ module.exports = function (config, cb) {
                 function (err) {
                     cb(err);
                 },
-                {mandatory: {OfferToReceiveAudio: false, OfferToReceiveVideo: false}}
+                {offerToReceiveAudio: false, offerToReceiveVideo: false}
             );
         },
-        // firefox seems to take longer for candidate gathering...
-        webrtc.prefix == 'moz' ? 5000 : 100
+        100
     );
 };
